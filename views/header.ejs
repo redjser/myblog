@@ -1,0 +1,18 @@
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="/" class="navbar-brand">Blog</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<%if (!user) {%>
+				<li><a href="/reg"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+				<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+				<%}else{%>
+				<li><p class="navbar-text">欢迎：<%=user.loginId%></p></li>
+				<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+				<%}%>
+			</ul>
+		</div>
+	</nav>
+	<%-message%>
+

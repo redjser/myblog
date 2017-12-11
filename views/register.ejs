@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+	<!-- 自定义输入框组属性，必须在bootstrap样式后 -->
+	<link rel="stylesheet" href="/stylesheets/style.css"/>
+	<script type="text/javascript" src="/javascripts/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<% include ./header%>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 " ></div>
+			<div class="col-md-4 " style="padding: 150px 50px 10px;">
+				<form  role="form"  method="post" action="/reg">
+					<div class="input-group">
+						<span class="input-group-addon input-group-addon-width">
+							登录名
+						</span>
+						<input type="text" class="form-control" name="loginId" placeholder="请输入登录名">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon input-group-addon-width">
+							密码  
+						</span>
+						<input type="password" class="form-control" name="password" placeholder="请输入密码">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon input-group-addon-width" >
+							确认密码
+						</span>
+						<input type="password" class="form-control" placeholder="请确认密码">
+					</div>
+					<br>
+					<button type="submit" class="btn btn-default  center-block">注册</button>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+</body>
+</html>

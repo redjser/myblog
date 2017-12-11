@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+	<!-- 自定义输入框组属性，必须在bootstrap样式后 -->
+	<link rel="stylesheet" href="/stylesheets/style.css"/>
+	<script type="text/javascript" src="/javascripts/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<% include ./header%>
+	<div class="container">
+	<%if (user) {%>
+	<form role="form" class="well form-horizontal" method="post" action="/pub">
+		<div class="form-group article-pub" >
+			<input type="text" class="form-control " placeholder="今天说点什么" name="articleText">
+		</div>
+	</form>
+	<%}%>
+
+	
+		
+		<%articles.forEach( function(article, index) {
+		if (index%3==0) {%>
+		<div class="row">
+			<%}%>
+			<!-- an article -->
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h1 class="panel-title"><%=article.title%></h1>
+					</div>
+					<div class="panel-body">
+						<%=article.text%>
+					</div>
+					<div class="panel-footer"><%=article.pub_time%></div>
+				</div>
+			</div>
+			<% if(index % 3 == 2){%>
+		</div> <!--结束行-->
+		<%}%>
+
+		<%})%>
+		<% if (articles.length % 3 !=0){ %>
+			</div>  <!--结束行-->
+		<%}%>
+
+	</div>
+</body>
+</html>
